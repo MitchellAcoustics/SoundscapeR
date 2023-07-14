@@ -1,8 +1,9 @@
+
+source("renv/activate.R")
+
 if (interactive()) {
     suppressMessages(require(devtools))
 }
-source("renv/activate.R")
-
 options(
     "Authors@R" = utils::person(
         "Andrew", "Mitchell",
