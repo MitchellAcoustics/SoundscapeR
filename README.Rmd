@@ -34,7 +34,7 @@ devtools::install_github("MitchellAcoustics/SoundscapeR")
 This is a basic example which shows you how to load the International Soundscape Database from the internet:
 
 ```{r example}
-library(SoundscapeR)
+library(soundscaper)
 data <- loadISD()
 head(data)
 ```

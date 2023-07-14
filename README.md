@@ -25,7 +25,7 @@ This is a basic example which shows you how to load the International
 Soundscape Database from the internet:
 
 ``` r
-library(SoundscapeR)
+library(soundscaper)
 data <- loadISD()
 head(data)
 #> # A tibble: 6 × 78
