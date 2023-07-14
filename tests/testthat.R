@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(SoundscapeR)
+library(soundscaper)
 
-test_check("SoundscapeR")
+test_check("soundscaper")
