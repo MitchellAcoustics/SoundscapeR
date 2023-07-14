@@ -17,5 +17,5 @@ Load the International Soundscape Database (ISD)
 }
 \examples{
 df <- loadISD(version = "0.2.4")
-df
+head(df)
 }

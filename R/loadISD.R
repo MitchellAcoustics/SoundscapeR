@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' df <- loadISD(version = "0.2.4")
-#' df
+#' head(df)
 loadISD <- function(version = "latest") {
     version <- ifelse(version == "latest", "0.2.4", version)
 
