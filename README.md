@@ -51,14 +51,14 @@ You can include R chunks like so:
 
 ``` r
 cut.data <- data %>%
-    dplyr::filter(LocationID %in% c("CamdenTown", "PancrasLock", "RegentsParkJapan"))
+  dplyr::filter(LocationID %in% c("CamdenTown", "PancrasLock", "RegentsParkJapan"))
 ISOjointplot(cut.data, group = "LocationID")
 #> Warning: Removed 167 rows containing non-finite values (`stat_density2d()`).
 #> Removed 167 rows containing non-finite values (`stat_density2d()`).
 #> Warning: Removed 167 rows containing missing values (`geom_point()`).
 ```
 
-<img src="man/figures/README-jointplot demo-1.png" width="100%" />
+<img src="man/figures/README-jointplotDemo-1.png" width="100%" />
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
 up-to-date. `devtools::build_readme()` is handy for this.

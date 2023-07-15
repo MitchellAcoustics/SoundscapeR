@@ -23,9 +23,9 @@ Calculate the projected ISOPleasant and ISOEventful coordinates.
 }
 \examples{
 df <- tibble::tibble(
-    pleasant = c(2, 3, 4), chaotic = c(4, 4, 3), vibrant = c(3, 2, 3),
-    uneventful = c(2, 1, 2), calm = c(1, 1, 2), annoying = c(2, 4, 4),
-    eventful = c(4, 2, 3), monotonous = c(3, 4, 2)
-    )
+  pleasant = c(2, 3, 4), chaotic = c(4, 4, 3), vibrant = c(3, 2, 3),
+  uneventful = c(2, 1, 2), calm = c(1, 1, 2), annoying = c(2, 4, 4),
+  eventful = c(4, 2, 3), monotonous = c(3, 4, 2)
+)
 iso_coords(df, val_range = c(1, 5))
 }

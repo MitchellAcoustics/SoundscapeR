@@ -1,5 +1,5 @@
 ---
-title: "comparing-locations"
+title: "Comparing Locations with a density plot"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{comparing-locations}

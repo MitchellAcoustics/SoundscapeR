@@ -23,7 +23,8 @@ Suggests:
     testthat (>= 3.0.0),
     rlang,
     knitr,
-    rmarkdown
+    rmarkdown,
+    qpdf
 Config/testthat/edition: 3
 URL: https://github.com/MitchellAcoustics/SoundscapeR, https://mitchellacoustics.github.io/SoundscapeR/
 BugReports: https://github.com/MitchellAcoustics/SoundscapeR/issues

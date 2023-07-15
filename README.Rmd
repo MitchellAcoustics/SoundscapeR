@@ -41,7 +41,7 @@ head(data)
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
-```{r jointplot demo}
+```{r jointplotDemo}
 cut.data <- data %>%
   dplyr::filter(LocationID %in% c("CamdenTown", "PancrasLock", "RegentsParkJapan"))
 ISOjointplot(cut.data, group = "LocationID")
