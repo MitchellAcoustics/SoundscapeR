@@ -1,0 +1,50 @@
+---
+title: "comparing-locations"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{comparing-locations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Load the ISD
+
+First, we load the ISD and take a quick look
+
+```{r setup}
+library(soundscaper)
+library(dplyr)
+
+data <- loadISD()
+head(data)
+```
+
+## Plot one location
+
+```{r plot location}
+g <-ISOjointplot(filter(data, LocationID == "CamdenTown"))
+g
+```
+
+## Comparing locations
+
+Now, we want to filter down to only the locations we want to investigate
+
+```{r}
+cut.data <- data %>%
+    dplyr::filter(LocationID %in% c("CamdenTown", "PancrasLock", "RegentsParkJapan"))
+    
+head(cut.data)
+```
+
+```{r}
+g <- ISOjointplot(cut.data, group="LocationID")
+g
+```

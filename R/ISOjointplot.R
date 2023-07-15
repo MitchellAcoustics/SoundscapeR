@@ -8,31 +8,44 @@
 #' @return ggplot
 #' @export
 ISOjointplot <- function(df, x = "ISOPleasant", y = "ISOEventful", group = "LocationID") {
-    x <- rlang::sym(x)
-    y <- rlang::sym(y)
-    group <- rlang::sym(group)
+  x <- rlang::sym(x)
+  y <- rlang::sym(y)
+  group <- rlang::sym(group)
 
-    d <- df %>%
-        dplyr::select(!!x, !!y, !!group)
+  d <- df %>%
+    dplyr::select(!!x, !!y, !!group)
 
-    # define color palette for density plot using pal package
-    densityClr <- pals::brewer.dark2(dplyr::count(unique(d[group]))[[1]])
+  # define color palette for density plot using pal package
+  num_groups <- dplyr::count(unique(d[group]))[[1]]
+  if (num_groups == 1) {
+      densityClr <- pals::brewer.dark2(3)[1]
+  } else if (num_groups == 2) {
+      densityClr <- pals::brewer.dark2(3)[1:2]
+  } else {
+      densityClr <- pals::brewer.dark2(num_groups)
+  }
 
-    g <- ggplot2::ggplot(
-        data = d,
-        ggplot2::aes(x = !!x, y = !!y, group = !!group)) +
-        ggplot2::geom_point(
-            ggplot2::aes(group = !!group, color = !!group), alpha = 0.3
-            ) +
-        ggplot2::stat_density_2d(geom = "polygon",
-                                 ggplot2::aes(alpha = ggplot2::after_stat(level),
-                                              fill = !!group),
-                                 bins = 5) +
-        ggplot2::scale_fill_manual(values = densityClr) +
-        ggplot2::scale_color_manual(values = densityClr) +
-        ggplot2::coord_fixed(xlim=c(-1,1), ylim=c(-1,1)) +
-        ggplot2::theme(legend.position = "left", legend.box = "vertical")
+  g <- ggplot2::ggplot(
+    data = d,
+    ggplot2::aes(x = !!x, y = !!y, group = !!group)
+  ) +
+    ggplot2::geom_point(
+      ggplot2::aes(group = !!group, color = !!group),
+      alpha = 0.3
+    ) +
+    ggplot2::stat_density_2d(
+      geom = "polygon",
+      ggplot2::aes(
+        alpha = ggplot2::after_stat(level),
+        fill = !!group
+      ),
+      bins = 5
+    ) +
+    ggplot2::scale_fill_manual(values = densityClr) +
+    ggplot2::scale_color_manual(values = densityClr) +
+    ggplot2::coord_fixed(xlim = c(-1, 1), ylim = c(-1, 1)) +
+    ggplot2::theme(legend.position = "left", legend.box = "vertical")
 
-    g.marg <- ggExtra::ggMarginal(g, groupColour = T, groupFill = T)
-    g.marg
+  g.marg <- ggExtra::ggMarginal(g, groupColour = T, groupFill = T)
+  g.marg
 }

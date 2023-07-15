@@ -43,7 +43,7 @@ What is special about using `README.Rmd` instead of just `README.md`? You can in
 
 ```{r jointplot demo}
 cut.data <- data %>%
-    dplyr::filter(LocationID %in% c("CamdenTown", "PancrasLock", "RegentsParkJapan"))
+  dplyr::filter(LocationID %in% c("CamdenTown", "PancrasLock", "RegentsParkJapan"))
 ISOjointplot(cut.data, group = "LocationID")
 ```
 
