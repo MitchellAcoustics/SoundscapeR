@@ -35,7 +35,7 @@ This is a basic example which shows you how to load the International Soundscape
 
 ```{r example}
 library(soundscaper)
-data <- loadISD()
+data <- ISD
 head(data)
 ```
 

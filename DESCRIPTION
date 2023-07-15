@@ -29,3 +29,5 @@ Config/testthat/edition: 3
 URL: https://github.com/MitchellAcoustics/SoundscapeR, https://mitchellacoustics.github.io/SoundscapeR/
 BugReports: https://github.com/MitchellAcoustics/SoundscapeR/issues
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)

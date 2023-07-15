@@ -22,7 +22,7 @@ First, we load the ISD and take a quick look
 library(soundscaper)
 library(dplyr)
 
-data <- loadISD()
+data <- ISD
 head(data)
 ```
 
